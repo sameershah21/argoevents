@@ -1,11 +1,11 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: EventSource
-#metadata:
-#  name: message-event-source
-#spec:
-#  type: webhook
-#  webhook:
-#    # Assuming your Flask service is named 'message-api' and exposed in the 'default' namespace
-#    port: 12000
-#    endpoint: /message
-#    url: http://message-api.default.svc:80/message
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: message-event-source
+spec:
+  type: webhook
+  webhook:
+    # Assuming your Flask service is named 'message-api' and exposed in the 'default' namespace
+    port: 12000
+    endpoint: /message
+    url: http://message-api.default.svc:80/message
