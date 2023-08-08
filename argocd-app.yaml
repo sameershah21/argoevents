@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/my-user/my-repo.git # Replace with your Git repository URL
+    repoURL: https://github.com/sameershah21/argoevents # Replace with your Git repository URL
     path: flask-app.yaml # Replace with the path to the 'flask-app.yaml' file in your repository
     targetRevision: HEAD
   destination:
