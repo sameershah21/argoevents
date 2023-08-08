@@ -1,25 +1,25 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Workflow
-#metadata:
-#  generateName: message-duplication-
-#spec:
-#  entrypoint: main
-#  arguments:
-#    parameters:
-#      - name: message
-#  templates:
-#    - name: main
-#      steps:
-#        - - name: duplicate-channel-1
-#            template: duplicate-message
-#        - - name: duplicate-channel-2
-#            template: duplicate-message
-#        - - name: duplicate-channel-3
-#            template: duplicate-message
-#    - name: duplicate-message
-#      inputs:
-#        parameters:
-#          - name: message
-#      container:
-#        image: my-duplication-image:latest
-#        command: ["duplicate", "{{inputs.parameters.message}}"]
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: message-duplication-
+spec:
+  entrypoint: main
+  arguments:
+    parameters:
+      - name: message
+  templates:
+    - name: main
+      steps:
+        - - name: duplicate-channel-1
+            template: duplicate-message
+        - - name: duplicate-channel-2
+            template: duplicate-message
+        - - name: duplicate-channel-3
+            template: duplicate-message
+    - name: duplicate-message
+      inputs:
+        parameters:
+          - name: message
+      container:
+        image: my-duplication-image:latest
+        command: ["duplicate", "{{inputs.parameters.message}}"]
