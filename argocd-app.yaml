@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/sameershah21/argoevents # Replace with your Git repository URL
-    path: flask-app.yaml # Replace with the path to the 'flask-app.yaml' file in your repository
+    path: . # Replace with the path to the 'flask-app.yaml' file in your repository
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
